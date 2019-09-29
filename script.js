@@ -5,14 +5,11 @@ const noteStatus = {
     "off": "r.16 "
 }
 
-const min = 0
-const max = 3
-
 const tabContainer = document.getElementById('tabContainer')
 
 function setTabContainer() {
     tabContainer.innerHTML = `
-        <div id="alphaTab" data-tex="true">
+        <div id="alphaTabScriptInit" data-tex="true">
                 
         </div>
     `
@@ -21,10 +18,12 @@ function setTabContainer() {
 function renderTabHTML(notesToRender) {
     
     console.log("renderTabHTML function running")
-    
-    let alphaTabRenderContainer = document.getElementById('alphaTab')
 
+    let alphaTabRenderContainer = document.getElementById('alphaTabScriptInit')
+    const myBackslash = `\\`;
     alphaTabRenderContainer.innerHTML = `
+        ${myBackslash}title "Breakdown"
+        ${myBackslash}tuning e5 b4 g4 d4 a3 d3
         .
         ${notesToRender}
     `
@@ -33,13 +32,15 @@ function renderTabHTML(notesToRender) {
 generateBreakdownButton.addEventListener('click', function () { 
 
     console.log("button pressed")
+    const min = 0
+    const max = 4
     let breakdownHolder = ""
     let incrementor = 0
 
     while (incrementor < 16) {
         var random = Math.floor(Math.random() * (+max - +min)) + +min
         console.log(random)
-        if (random > 0) {
+        if (random > 1) {
             breakdownHolder = breakdownHolder + noteStatus.on
         } else {
             breakdownHolder = breakdownHolder + noteStatus.off
@@ -54,6 +55,13 @@ generateBreakdownButton.addEventListener('click', function () {
 
     renderTabHTML(breakdownHolder)
 
-    $('#alphaTab').alphaTab()
+    $('#alphaTabScriptInit').alphaTab({
+        staves: {
+            id: 'tab',
+            additionalSettings: {
+                rhythm: true
+            }
+        }
+      })
 })
 
