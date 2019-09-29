@@ -36,10 +36,14 @@ generateBreakdownButton.addEventListener('click', function () {
     const max = 4
     let breakdownHolder = ""
     let incrementor = 0
+    let numberOfNotes = 32
 
-    while (incrementor < 16) {
+    while (incrementor < numberOfNotes) {
         var random = Math.floor(Math.random() * (+max - +min)) + +min
         console.log(random)
+        if (incrementor === (numberOfNotes / 2)) {
+            breakdownHolder = breakdownHolder + "|"
+        }
         if (random > 1) {
             breakdownHolder = breakdownHolder + noteStatus.on
         } else {
