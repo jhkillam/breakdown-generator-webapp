@@ -5152,7 +5152,7 @@ alphaTab.rendering.layout.PageViewLayout.prototype = $extend(alphaTab.rendering.
 			this.TuningGlyph.y = y;
 			y = y + this.TuningGlyph.height;
 		}
-		y = y + 20 * scale;
+		y = y * scale;
 		var canvas = this.renderer.canvas;
 		canvas.beginRender(this.width,y);
 		canvas.set_color(res.scoreInfoColor);
