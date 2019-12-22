@@ -1,7 +1,14 @@
 # breakdown-generator-webapp
 
-This project is intended to generate random guitar breakdown riffs to facilitate musical ideas. 
+The purpose of this project is to generate random guitar patterns to facilitate musical ideas. 
 
 Current build utilizes [AlphaTab](https://www.alphatab.net/) to render the notation.
 
-Demo is live at [https://jhkillam.github.io/breakdown-generator-webapp/](https://jhkillam.github.io/breakdown-generator-webapp/).
+A live demo is available at https://jhkillam.github.io/breakdown-generator-webapp/.
+
+## Future Development Plans
+
+- Audio playback
+- MIDI export
+- PDF export
+- Save favorite patterns to your account
